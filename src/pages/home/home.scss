@@ -9,10 +9,15 @@ page-home {
         display: inline-block;
     }
 
-    ion-scroll {
-        min-height: 250px; 
-        height: auto;
+    .card {
+        border-radius: 15px;
+        overflow: hidden;
+        margin: 5px;
+      }
 
+    ion-scroll {
+        min-height: 200px; 
+        height: auto;
             .scroll-content {
             padding: 0px !important;
         }    
