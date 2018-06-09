@@ -7,6 +7,10 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  List = [
+    {},
+    {},
+  ];
   constructor(public navCtrl: NavController) {
 
   }
