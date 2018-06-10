@@ -1,41 +1,66 @@
 <ion-header>
-    <ion-navbar>
-       <ion-title>Simulador</ion-title>
-    </ion-navbar>
- </ion-header>
- <ion-content>
-    <ion-list padding>
-       <ion-item>
-          <ion-label stacked>Valor compra</ion-label>
-          <ion-input type="number" placeholder="R$" [(ngModel)]="money" (change)="form($event)"></ion-input>
-       </ion-item>
-       <ion-item>
-          <ion-label>Taxa</ion-label>
-          <ion-range min="0" max="100" pin="true" [(ngModel)]="tax" color="secondary" (ionChange)="form($event)">
-          <ion-icon range-left small name="logo-usd"></ion-icon>
-          <ion-icon range-right name="logo-usd"></ion-icon>
-          </ion-range>
-       </ion-item>
-       <ion-item>
-          <ion-icon name="ios-cash-outline" color="primary" item-start></ion-icon>
-          ICMS
-          <p item-end>{{icms}}%</p>
-       </ion-item>
-    </ion-list>
-    <ion-item-group *ngIf="haveResult">
-       <ion-item-divider>
-          Resultado
-       </ion-item-divider>
-       <ion-item text-wrap  [color]="result.color">
-          {{ result.text }}
-       </ion-item>
-       <ion-item text-center [color]="result.color">
-          <h1>{{ result.total }}</h1>
-       </ion-item>
-       <ion-item [color]="result.color">
-        <ion-icon name="ios-cash-outline" item-start></ion-icon>
-            Valor real
-        <p item-end>{{real}}%</p>
-     </ion-item>
-    </ion-item-group>
- </ion-content>
+        <ion-navbar>
+           <ion-title>Calculadora</ion-title>
+        </ion-navbar>
+     </ion-header>
+     <ion-content padding>
+        <div class="shazamPae" text-center center *ngIf="!haveResult">
+           <ion-list no-lines >
+              <ion-item text-center center>
+                 <ion-icon name="ios-calculator"  class="iconLarge" text-center center></ion-icon>
+              </ion-item>
+              <ion-item>
+                 <ion-label>Valor compra</ion-label>
+                 <ion-input type="number" placeholder="R$" [(ngModel)]="money"></ion-input>
+              </ion-item>
+              <ion-item>
+                 <ion-label>Margem de lucro</ion-label>
+                 <ion-input type="number" placeholder="%" [(ngModel)]="tax"></ion-input>
+              </ion-item>
+              <ion-item>
+                 <button color="primary" ion-button block icon-left large (click)="form()">
+                 Calcular 
+                 </button>
+              </ion-item>
+           </ion-list>
+        </div>
+        <ion-list  *ngIf="haveResult">
+           <ion-item>
+              <ion-label>Valor compra</ion-label>
+              <ion-input type="number" placeholder="R$" [(ngModel)]="money" (change)="form($event)"></ion-input>
+           </ion-item>
+           <ion-item>
+              <ion-label>Margem de lucro</ion-label>
+              <ion-input type="number" placeholder="%" [(ngModel)]="tax" (change)="form($event)"></ion-input>
+           </ion-item>
+        </ion-list>
+        <ion-item-group *ngIf="haveResult">
+           <ion-item>
+              <ion-label>Margem de lucro</ion-label>
+              <ion-range min="0" step="5" max="100" pin="true" [(ngModel)]="tax" [color]="result.color" (ionChange)="form($event)">
+              <ion-icon range-left small name="logo-usd"></ion-icon>
+              <ion-icon range-right name="logo-usd"></ion-icon>
+              </ion-range>
+           </ion-item>
+           <ion-item text-wrap [color]="result.color" text-center center>
+              <ion-icon name="{{result.icon}}" class="iconLarge"></ion-icon>
+              <br><br>
+              <p>{{ result.text }}</p>
+           </ion-item>
+           <ion-item [color]="result.color">
+              <ion-icon name="ios-cart" item-start></ion-icon>
+              Venda
+              <p item-end>{{result.total}}</p>
+           </ion-item>
+           <ion-item [color]="result.color">
+              <ion-icon name="logo-usd" item-start></ion-icon>
+              Lucro
+              <p item-end>{{real}}</p>
+           </ion-item>
+           <ion-item [color]="result.color">
+              <ion-icon name="ios-cash-outline" item-start></ion-icon>
+              ICMS
+              <p item-end>{{icms}}%</p>
+           </ion-item>
+        </ion-item-group>
+     </ion-content>

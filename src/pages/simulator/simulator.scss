@@ -1,3 +1,34 @@
 page-simulator {
+    .range-md .range-knob {
+        top: 0px;
+        z-index: 2;
+        width: 40px;
+        height: 40px;
+    }
+    .shazamPae {
+        // height: 100%;
+        // width: 100%;
+        // display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        text-align: center;
+        ion-icon {
+            // zoom: 3.0;
 
+            &.-small {
+            zoom: 1;
+            }
+        }
+        i {
+            zoom: 3.0;
+            &.-small {
+                zoom: 2;
+            }
+        }
+        h3 {
+            width: 100%;
+            display: block;
+        }
+      }
 }

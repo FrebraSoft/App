@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-simulator',
@@ -15,11 +16,12 @@ export class SimulatorPage {
   result = {
     totalInt : 0,
     text : "",
+    icon : "",
     total : "",
     color : "",
     isDanger : false
   };
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
   }
 
   form()
@@ -33,19 +35,22 @@ export class SimulatorPage {
     this.haveResult = true;
     this.result.totalInt = parseFloat( this.formatReal(totalValue).replace(/[\D]+/g,'') );
     this.result.total = this.formatMoney(this.result.totalInt);
-    if(this.tax >= 0 && this.tax <= 5)
+    if(this.tax >= 0 && this.tax <= 20)
     {
-      this.result.text = "Recomendamos que você aumente para não ficar no prejuízo";
-      this.result.color = "warning";
-    }
-    else if(this.tax >= 20)
-    {
-      this.result.text = "Não exagere na taxa";
+      this.result.text = "Não recomendamos assumir o prejuízo";
+      this.result.icon = "ios-sad";
       this.result.color = "danger";
+    }
+    else if(this.tax >= 21 && this.tax <= 49)
+    {
+      this.result.text = "Hmmm você pode melhorar";
+      this.result.icon = "ios-sad";
+      this.result.color = "warning";
     }
     else
     {
       this.result.text = "Ótima proposta!";
+      this.result.icon = "ios-happy";
       this.result.color = "primary";    
     }
   }
@@ -68,6 +73,5 @@ export class SimulatorPage {
     
     return tmp;
   }
-    
     
 }
