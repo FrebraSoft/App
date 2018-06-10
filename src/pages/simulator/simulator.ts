@@ -97,7 +97,6 @@ export class SimulatorPage {
 
   fixValores(valor) {
     return parseFloat(valor) 
-    return parseFloat(valor.replace('R$ ', '').replace('R$', '').replace('%', '').replace(' ', '').replace(',', '.')) 
   }
 
   fixString(valor, tipo) {
