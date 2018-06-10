@@ -51,6 +51,11 @@ $colors: (
   color: white;
 }
 
+.iconLarge {
+  font-size: 50px;
+  text-align: center;
+}
+
 ion-header {
   ion-icon.back-button-icon.icon {
       color: map-get($colors,light);
