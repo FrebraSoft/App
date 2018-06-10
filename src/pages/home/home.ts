@@ -7,89 +7,87 @@ import { Chart } from 'chart.js';
   templateUrl: 'home.html'
 })
 export class HomePage {
- 
-    @ViewChild('profitCanvas') profitCanvas;
-    @ViewChild('evasionCanvas') evasionCanvas;
-    @ViewChild('icmsCanvas') icmsCanvas;
     
+    Data = [
+      {
+        'color' : 'primary',
+        'label' : 'NFE 99',
+        'value' : 'R$ 98,90',
+        'date'  : '07/06/2018',
+        'icon'  : 'ios-cash-outline',
+      },
+      {
+        'color' : 'danger',
+        'label' : 'NFE 98',
+        'value' : 'R$ 38,40',
+        'date'  : '07/06/2018',
+        'icon'  : 'ios-cash-outline',
+      },
+      {
+        'color' : 'primary',
+        'label' : 'NFE 97',
+        'value' : 'R$ 38,90',
+        'date'  : '06/06/2018',
+        'icon'  : 'ios-cash-outline',
+      },
+      {
+        'color' : 'primary',
+        'label' : 'NFE 96',
+        'value' : 'R$ 198,78',
+        'date'  : '06/06/2018',
+        'icon'  : 'ios-cash-outline',
+      },
+      {
+        'color' : 'primary',
+        'label' : 'NFE 95',
+        'value' : 'R$ 203,43',
+        'date'  : '05/06/2018',
+        'icon'  : 'ios-cash-outline',
+      },
+      {
+        'color' : 'danger',
+        'label' : 'NFE 94',
+        'value' : 'R$ 128,40',
+        'date' : '04/06/2018',
+        'icon' : 'ios-cash-outline',
+      },
+      {
+        'color' : 'danger',
+        'label' : 'NFE 93',
+        'value' : 'R$ 50,25',
+        'date' : '03/06/2018',
+        'icon' : 'ios-cash-outline',
+      },
+      {
+        'color' : 'primary',
+        'label' : 'NFE 92',
+        'value' : 'R$ 98,90',
+        'date' : '02/06/2018',
+        'icon' : 'ios-cash-outline',
+      },
+      {
+        'color' : 'primary',
+        'label' : 'NFE 93',
+        'value' : 'R$ 98,90',
+        'date' : '01/06/2018',
+        'icon' : 'ios-cash-outline',
+      },
+      {
+        'color' : 'primary',
+        'label' : 'NFE 91',
+        'value' : 'R$ 56,39',
+        'date' : '25/05/2018',
+        'icon' : 'ios-cash-outline',
+      },
+      {
+        'color' : 'primary',
+        'label' : 'NFE 90',
+        'value' : 'R$ 29,34',
+        'date' : '24/05/2018',
+        'icon' : 'ios-cash-outline',
+      },
+    ]
     constructor(public navCtrl: NavController) {
  
-    }
- 
-    ionViewDidLoad() {
-
-      Chart.defaults.global.legend.position = 'bottom'
-      Chart.defaults.global.legend.display = false;
-      Chart.defaults.global.tooltips.enabled = false;
-      Chart.defaults.scale.gridLines.display = false;
-      Chart.defaults.scale.display = false;
-      Chart.defaults.responsive = true;
-      
-      this.profitCanvas = new Chart(this.profitCanvas.nativeElement, {
-        type: 'line',
-        data: {
-            labels: ["Jan","Fev","Mar"],
-            datasets: [
-                {
-                    fill: false,
-                    lineTension: 0.1,
-                    backgroundColor: "transparent",
-                    borderColor: "#3fab6a",
-                    borderCapStyle: 'butt',
-                    borderDash: [],
-                    borderDashOffset: 0.0,
-                    borderJoinStyle: 'miter',
-                    pointBackgroundColor: "#3fab6a",
-                    data: [65,39,120],
-                    spanGaps: false,
-                }
-            ]
-        }
-      });
-
-      this.evasionCanvas = new Chart(this.evasionCanvas.nativeElement, {
-        type: 'line',
-        data: {
-            labels: ["Jan","Fev","Mar"],
-            datasets: [
-                {
-                  fill: false,
-                  lineTension: 0.1,
-                  backgroundColor: "transparent",
-                  borderColor: "red",
-                  borderCapStyle: 'butt',
-                  borderDash: [],
-                  borderDashOffset: 0.0,
-                  borderJoinStyle: 'miter',
-                  pointBackgroundColor: "red",
-                  data: [90,69,10],
-                  spanGaps: false,
-              }
-            ]
-        }
-      });
-
-      this.icmsCanvas = new Chart(this.icmsCanvas.nativeElement, {
-        type: 'line',
-        data: {
-            labels: ["Jan","Fev","Mar"],
-            datasets: [
-                {
-                  fill: false,
-                  lineTension: 0.1,
-                  backgroundColor: "transparent",
-                  borderColor: "#3fab6a",
-                  borderCapStyle: 'butt',
-                  borderDash: [],
-                  borderDashOffset: 0.0,
-                  borderJoinStyle: 'miter',
-                  pointBackgroundColor: "#3fab6a",
-                  data: [30,69,12],
-                  spanGaps: false,
-              }
-            ]
-        }
-      });
-
     }
 }
