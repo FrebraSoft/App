@@ -36,7 +36,7 @@ export class LoginPage {
         back : "Voltar", 
       };
       this.slideDocumentForm = formBuilder.group({
-          email: ['tatiana@febrasoft.com', [Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$')]],
+        document: ['222.343.162-35', [Validators.required]],
        });
        this.slidePasswordForm = formBuilder.group({
           password: ['123456', [Validators.required,Validators.minLength(4),Validators.maxLength(30)]],
