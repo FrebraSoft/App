@@ -9,6 +9,8 @@ export class SimulatorPage {
 
   tax: number = 0;
   money: number = 0;
+  icms: number = 18;
+  real : number = 0;
   haveResult: boolean = false;
   result = {
     totalInt : 0,
@@ -18,10 +20,6 @@ export class SimulatorPage {
     isDanger : false
   };
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SimulatorPage');
   }
 
   form()
