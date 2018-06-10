@@ -11,6 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { SettingsPage } from '../pages/settings/settings';
 import { ProfilePage } from '../pages/profile/profile';
+import { SimulatorPage } from '../pages/simulator/simulator';
 import { AuthProvider } from '../providers/auth/auth';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { AuthProvider } from '../providers/auth/auth';
     LoginPage,
     SettingsPage,
     ProfilePage,
+    SimulatorPage
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { AuthProvider } from '../providers/auth/auth';
     LoginPage,
     SettingsPage,
     ProfilePage,
+    SimulatorPage
   ],
   providers: [
     StatusBar,
