@@ -9,7 +9,6 @@ import { HomePage } from '../pages/home/home';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
-import { SettingsPage } from '../pages/settings/settings';
 import { ProfilePage } from '../pages/profile/profile';
 import { SimulatorPage } from '../pages/simulator/simulator';
 import { AuthProvider } from '../providers/auth/auth';
@@ -22,7 +21,6 @@ import { Chart } from 'chart.js';
     WelcomePage,
     TabsPage,
     LoginPage,
-    SettingsPage,
     ProfilePage,
     SimulatorPage
   ],
@@ -37,7 +35,6 @@ import { Chart } from 'chart.js';
     WelcomePage,
     TabsPage,
     LoginPage,
-    SettingsPage,
     ProfilePage,
     SimulatorPage
   ],
