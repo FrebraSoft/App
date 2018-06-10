@@ -13,6 +13,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { ProfilePage } from '../pages/profile/profile';
 import { SimulatorPage } from '../pages/simulator/simulator';
 import { AuthProvider } from '../providers/auth/auth';
+import { Chart } from 'chart.js';
 
 @NgModule({
   declarations: [
