@@ -2,7 +2,21 @@ page-home {
     .scroll-zoom-wrapper {
         white-space: nowrap;
     }
-
+    .Header{
+        font-size: 5vh;
+        z-index: 999999;
+        background-color:  map-get($colors, primary);
+        padding-top: 40px;
+        padding-bottom: 40px;
+        color: white;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        width: 100%;
+        // left: 0;
+        // top: 0;
+        // position: absolute;
+    }
     ion-card {
         width: 150px !important;
         height: 150px;
@@ -10,7 +24,7 @@ page-home {
     }
 
     .card {
-        border-radius: 15px;
+        border-radius: 5px;
         overflow: hidden;
         margin: 5px;
       }
