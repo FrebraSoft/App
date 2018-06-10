@@ -89,7 +89,7 @@ export class LoginPage {
     let self = this;
     this.auth.store({'lorem':"ipsum"});
     this.toastCtrl.create({ duration: 3000, position: 'bottom', showCloseButton : true, closeButtonText: "OK", cssClass: "-toast-success" })
-      .setMessage('Bem-vinda, Carla')
+      .setMessage('Bem-vinda, Tatiana')
       .present();    
     this.app.getRootNav().setRoot(TabsPage);
     this.modalhide();

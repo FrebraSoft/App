@@ -20,11 +20,6 @@
                  </ion-list >
                  <ion-footer>
                     <ion-toolbar>
-                        <ion-buttons left>
-                                <button ion-button  full icon-left class="-text-white" (click)="nextSlide('back')">
-                                {{ Labels.back }}
-                                </button>
-                        </ion-buttons>
                        <ion-buttons right>
                           <button ion-button  full icon-right class="-text-white" [disabled]="!slideDocumentForm.valid" (click)="submit(this.slideDocumentForm)">
                           {{ Labels.next }}                      
