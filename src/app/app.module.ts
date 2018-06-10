@@ -9,6 +9,8 @@ import { HomePage } from '../pages/home/home';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
+import { SettingsPage } from '../pages/settings/settings';
+import { ProfilePage } from '../pages/profile/profile';
 import { AuthProvider } from '../providers/auth/auth';
 
 @NgModule({
@@ -18,6 +20,8 @@ import { AuthProvider } from '../providers/auth/auth';
     WelcomePage,
     TabsPage,
     LoginPage,
+    SettingsPage,
+    ProfilePage,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +34,8 @@ import { AuthProvider } from '../providers/auth/auth';
     WelcomePage,
     TabsPage,
     LoginPage,
+    SettingsPage,
+    ProfilePage,
   ],
   providers: [
     StatusBar,
