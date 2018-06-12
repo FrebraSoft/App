@@ -17,12 +17,10 @@
                          <ion-label>Margem de lucro</ion-label>
                          <ion-input type="number" placeholder="%" [(ngModel)]="tax"></ion-input>
                       </ion-item>
-                      <ion-item>
-                         <button color="primary" ion-button block icon-left large (click)="form()">
-                         Calcular 
-                         </button>
-                      </ion-item>
                    </ion-list>
+                   <button color="primary" ion-button block icon-left (click)="form()">
+                              Calcular 
+                              </button>
                 </div>
                 <ion-list  *ngIf="haveResult">
                    <ion-item>
@@ -34,7 +32,7 @@
                       <ion-input type="number" placeholder="%" [(ngModel)]="tax" (change)="form($event)"></ion-input>
                    </ion-item>
                 </ion-list>
-                <ion-item-group *ngIf="haveResult">
+                <ion-list *ngIf="haveResult" no-lines>
                    <ion-item>
                       <ion-label>Lucro esperado</ion-label>
                       <ion-range min="0" step="5" max="100" pin="true" [(ngModel)]="tax" [color]="result.color" (ionChange)="form($event)">
@@ -47,13 +45,17 @@
                       <br><br>
                       <p>{{ result.text }}</p>
                    </ion-item>
-                   <ion-item [color]="result.color">
-                                <ion-icon name="ios-cart" item-start></ion-icon>
-                                <strong>
-                                   Lucro bruto
-                                  </strong>
-                                   <p item-end>{{result.lucroBrutoRS}}</p>
-                             </ion-item>
+                   <ion-item [color]="result.color" center text-center>                        
+                  <strong>
+                        <h1>{{result.lucroBrutoRS}}</h1>
+                        <p item-end>Lucro bruto</p>
+                  </strong>
+                  </ion-item>
+                  <ion-item [color]="result.color">
+                        <ion-icon name="ios-cart" item-start></ion-icon>
+                        ICMS Destino (%)
+                        <p item-end>{{icmsDestino}}</p>
+                        </ion-item>
                    <ion-item [color]="result.color">
                       <ion-icon name="ios-cart" item-start></ion-icon>
                       <strong>
@@ -64,37 +66,42 @@
                    <ion-item [color]="result.color">
                       <ion-icon name="logo-usd" item-start></ion-icon>
                       Lucro
-                      <p item-end>{{real}}</p>
+                      <p item-end>{{result.lucro}}</p>
                    </ion-item>
+                   <ion-item [color]="result.color">
+                        <ion-icon name="ios-cash-outline" item-start></ion-icon>
+                        Valor ICMS
+                        <p item-end>{{result.valorICMSDestino}}%</p>
+                     </ion-item>
                    <ion-item [color]="result.color">
                       <ion-icon name="ios-cash-outline" item-start></ion-icon>
-                      Valor ICMS
-                      <p item-end>{{icms}}%</p>
+                      Crédito ICMS Restante
+                      <p item-end>{{result.creditoICMSRestante}}%</p>
                    </ion-item>
                    <ion-item [color]="result.color">
                       <ion-icon name="logo-usd" item-start></ion-icon>
-                      Crédito ICMS
+                      Valor ICMS a Pagar
+                      <p item-end>{{result.valorICMSDestinoPagar}}</p>
+                   </ion-item>
+                   <ion-item [color]="result.color">
+                      <ion-icon name="logo-usd" item-start></ion-icon>
+                      PIS (0,65 %)
                       <p item-end>{{result.valorPIS}}</p>
                    </ion-item>
                    <ion-item [color]="result.color">
                       <ion-icon name="logo-usd" item-start></ion-icon>
-                      PIS
-                      <p item-end>{{result.valorPIS}}</p>
-                   </ion-item>
-                   <ion-item [color]="result.color">
-                      <ion-icon name="logo-usd" item-start></ion-icon>
-                      CONFINS
+                      CONFINS (3,00 %)
                       <p item-end>{{result.valorCOFINS}}</p>
                    </ion-item>
                    <ion-item [color]="result.color">
                       <ion-icon name="logo-usd" item-start></ion-icon>
-                      IRPJ
+                      Contr Social (1,08%)
                       <p item-end>{{result.valorContrSocial}}</p>
                    </ion-item>
                    <ion-item [color]="result.color">
                       <ion-icon name="logo-usd" item-start></ion-icon>
-                      Contr Social
-                      <p item-end>{{result.valorContrSocial}}</p>
+                      IRPJ
+                      <p item-end>{{result.IRPJ}}</p>
                    </ion-item>
-                </ion-item-group>
+                </ion-list>
              </ion-content>

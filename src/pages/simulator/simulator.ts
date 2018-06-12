@@ -8,10 +8,11 @@ import { AlertController } from 'ionic-angular';
 })
 export class SimulatorPage {
 
-  tax: number = 10;
+  tax: number = 5;
   money: number = 50;
   icms: number = 18;
   real : number = 0;
+  icmsDestino : number = 7;
   haveResult: boolean = false;
   result = {
     totalInt : 0,
@@ -26,6 +27,7 @@ export class SimulatorPage {
     valorICMSDestino : "",
     valorICMSDestinoPagar : "",
     creditoICMSRestante : "",
+    icmsDestino : "",
     valorPIS : "",
     valorCOFINS : "",
     valorContrSocial : "",
@@ -120,7 +122,7 @@ export class SimulatorPage {
     var valorCompra = this.fixValores(this.money);
     var icmsCompra = this.fixValores(this.icms) / 100;
     var lucroEsperado = this.fixValores(this.tax) / 100;
-    var icmsDestino = this.fixValores(this.icms) / 100;
+    var icmsDestino = this.fixValores(this.icmsDestino) / 100;
 
     var valorCredito = valorCompra * icmsCompra;
     var valorReal =  Math.abs(valorCompra - valorCredito);
